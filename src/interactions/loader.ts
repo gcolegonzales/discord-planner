@@ -15,6 +15,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { pathToFileURL } from 'url';
 import { registerCommand, registerButton, registerModal } from './router';
 import type { CommandModule, ButtonModule, ModalModule } from './router';
 
@@ -89,7 +90,7 @@ export async function loadHandlers(
   const commandsDir = path.join(baseDir, 'commands');
   for (const file of listHandlerFiles(commandsDir)) {
     const fullPath = path.join(commandsDir, file);
-    const mod: unknown = await import(fullPath);
+    const mod: unknown = await import(pathToFileURL(fullPath).href);
     if (isCommandModule(mod)) {
       registerCommand(mod.command);
       counts.commands++;
@@ -102,7 +103,7 @@ export async function loadHandlers(
   const buttonsDir = path.join(baseDir, 'buttons');
   for (const file of listHandlerFiles(buttonsDir)) {
     const fullPath = path.join(buttonsDir, file);
-    const mod: unknown = await import(fullPath);
+    const mod: unknown = await import(pathToFileURL(fullPath).href);
     if (isButtonModule(mod)) {
       registerButton(mod.button);
       counts.buttons++;
@@ -115,7 +116,7 @@ export async function loadHandlers(
   const modalsDir = path.join(baseDir, 'modals');
   for (const file of listHandlerFiles(modalsDir)) {
     const fullPath = path.join(modalsDir, file);
-    const mod: unknown = await import(fullPath);
+    const mod: unknown = await import(pathToFileURL(fullPath).href);
     if (isModalModule(mod)) {
       registerModal(mod.modal);
       counts.modals++;

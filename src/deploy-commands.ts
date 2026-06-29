@@ -1,20 +1,14 @@
 import { REST, Routes, SlashCommandBuilder } from 'discord.js';
 import type { RESTPostAPIChatInputApplicationCommandsJSONBody } from 'discord.js';
 import { loadConfig } from './config';
-import { loadHandlers } from './interactions';
 
 async function deploy(): Promise<void> {
   const config = loadConfig();
 
-  // Collect all command data via the same directory-scan loader used at runtime.
-  // No hand-maintained array — drop a file in src/interactions/commands/ and it
-  // is picked up automatically.
-  const { commands: commandCount } = await loadHandlers();
-  // The loader already registered handlers into the router; we need the raw data
-  // for REST registration.  Re-scan to collect data objects without side-effects
-  // from the router registrations (which are harmless but we need the JSON).
-  // Import the loader internals directly for data collection.
+  // Collect command JSON by scanning src/interactions/commands/ — drop a file
+  // there and it is picked up automatically (no hand-maintained array).
   const commandData = await collectCommandData();
+  const commandCount = commandData.length;
 
   const rest = new REST({ version: '10' }).setToken(config.discordToken);
 
@@ -40,6 +34,7 @@ async function deploy(): Promise<void> {
 async function collectCommandData(): Promise<RESTPostAPIChatInputApplicationCommandsJSONBody[]> {
   const fs = await import('fs');
   const path = await import('path');
+  const { pathToFileURL } = await import('url');
 
   const commandsDir = path.join(__dirname, 'interactions', 'commands');
   if (!fs.existsSync(commandsDir)) return [];
@@ -59,7 +54,7 @@ async function collectCommandData(): Promise<RESTPostAPIChatInputApplicationComm
   const data: RESTPostAPIChatInputApplicationCommandsJSONBody[] = [];
   for (const file of files) {
     const fullPath = path.join(commandsDir, file);
-    const mod = (await import(fullPath)) as Record<string, unknown>;
+    const mod = (await import(pathToFileURL(fullPath).href)) as Record<string, unknown>;
     const cmd = mod['command'] as
       | { data: SlashCommandBuilder | RESTPostAPIChatInputApplicationCommandsJSONBody }
       | undefined;
