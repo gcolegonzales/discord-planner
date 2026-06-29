@@ -1,0 +1,19 @@
+# dependencies / build
+node_modules/
+dist/
+
+# env & secrets
+.env
+*.local
+
+# data
+data/
+*.sqlite
+*.sqlite-*
+
+# spec workflow
+spec/.state/.spec-unlock
+
+# os / editor
+.DS_Store
+Thumbs.db
