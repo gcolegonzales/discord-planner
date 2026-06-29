@@ -1,0 +1,35 @@
+{
+  "name": "discord-scheduler",
+  "version": "0.1.0",
+  "description": "Pure-Discord availability-planning bot",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "start": "node dist/index.js",
+    "deploy": "tsx src/deploy-commands.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.6.0",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "luxon": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^20.14.9",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.3"
+  }
+}
