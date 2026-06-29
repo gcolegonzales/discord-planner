@@ -3,13 +3,21 @@
   "branch": "spec-build/all-1",
   "startedAtNote": "build started this session; Date.now() unavailable in workflows",
   "tasks": {
-    "T-001": { "status": "done", "model": "sonnet", "attempts": 1 },
-    "T-002": { "status": "done", "model": "sonnet", "attempts": 1, "note": "auto-discovery contract: commands/buttons/modals export {data|prefix, execute}" },
-    "T-003": { "status": "done", "model": "sonnet", "attempts": 1, "note": "repo.ts has all SQL; 20 tests" },
-    "T-006": { "status": "done", "model": "sonnet", "attempts": 1, "note": "validateEventInput/DateRange/TimeRange; 43 tests" },
-    "T-011": { "status": "in-progress", "model": "opus", "attempts": 1 },
-    "T-012": { "status": "in-progress", "model": "opus", "attempts": 1 }
+    "T-001": { "status": "done", "model": "sonnet" },
+    "T-002": { "status": "done", "model": "sonnet", "note": "auto-discovery contract" },
+    "T-003": { "status": "done", "model": "sonnet" },
+    "T-006": { "status": "done", "model": "sonnet" },
+    "T-011": { "status": "done", "model": "opus" },
+    "T-012": { "status": "done", "model": "opus" },
+    "T-004": { "status": "done", "model": "sonnet" },
+    "T-005": { "status": "done", "model": "sonnet", "note": "added src/db/singleton.ts getDb() for handlers" },
+    "T-007": { "status": "done", "model": "sonnet" },
+    "T-008": { "status": "done", "model": "sonnet" },
+    "T-014": { "status": "in-progress", "model": "sonnet" },
+    "T-009": { "status": "in-progress", "model": "sonnet" },
+    "T-010": { "status": "in-progress", "model": "sonnet" },
+    "T-013": { "status": "in-progress", "model": "sonnet" }
   },
-  "waves": { "completed": [1, 2], "current": 3 },
-  "testsGreen": 89
+  "waves": { "completed": [1, 2, 3, 4, 5], "current": 6 },
+  "testsGreen": 138
 }
