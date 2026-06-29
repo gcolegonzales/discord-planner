@@ -1,20 +1,20 @@
 # Sprint board — Discord Scheduler
 
 > Local work-item board. Source of truth. Sprint = wave. Synced to: none
-> Totals: 14 To Do · 0 In Progress · 0 In Review · 0 Done
+> Totals: 8 Backlog · 0 To Do · 2 In Progress · 0 In Review · 4 Done · 89 tests green
 
-## Sprint 1 (Wave 1)
-### To Do
-- [ ] **T-001** Scaffold project, tooling & config (FEAT-foundation-1) · sonnet · deps: — <!-- ext: — -->
+## Sprint 1 (Wave 1) — done
+- [x] **T-001** Scaffold project, tooling & config (FEAT-foundation-1) · sonnet
+
+## Sprint 2 (Wave 2) — done
+- [x] **T-002** Bot bootstrap, router (directory-scan) & deploy (FEAT-foundation-1) · sonnet
+- [x] **T-003** SQLite persistence layer & types (FEAT-foundation-2) · sonnet
+- [x] **T-006** Pure validation module (FEAT-event-lifecycle-1) · sonnet
+
+## Sprint 3 (Wave 3)
 ### In Progress
-### In Review
-### Done
-
-## Sprint 2 (Wave 2)
-### Backlog
-- [ ] **T-002** Bot bootstrap, router & deploy (FEAT-foundation-1) · sonnet · deps: T-001 <!-- ext: — -->
-- [ ] **T-003** SQLite persistence layer & types (FEAT-foundation-2) · sonnet · deps: T-001 <!-- ext: — -->
-- [ ] **T-006** Pure validation module (FEAT-event-lifecycle-1) · sonnet · deps: T-001 <!-- ext: — -->
+- [ ] **T-011** Slot grid (tz/DST-safe) (FEAT-availability-engine-1) · opus · deps: T-003 <!-- ext: — -->
+- [ ] **T-012** Matching & ranking engine (FEAT-availability-engine-2) · opus · deps: T-011 <!-- ext: — -->
 
 ## Sprint 3 (Wave 3)
 ### Backlog

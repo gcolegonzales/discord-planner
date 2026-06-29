@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "branch": "spec-build/all-1",
+  "startedAtNote": "build started this session; Date.now() unavailable in workflows",
+  "tasks": {
+    "T-001": { "status": "done", "model": "sonnet", "attempts": 1 },
+    "T-002": { "status": "done", "model": "sonnet", "attempts": 1, "note": "auto-discovery contract: commands/buttons/modals export {data|prefix, execute}" },
+    "T-003": { "status": "done", "model": "sonnet", "attempts": 1, "note": "repo.ts has all SQL; 20 tests" },
+    "T-006": { "status": "done", "model": "sonnet", "attempts": 1, "note": "validateEventInput/DateRange/TimeRange; 43 tests" },
+    "T-011": { "status": "in-progress", "model": "opus", "attempts": 1 },
+    "T-012": { "status": "in-progress", "model": "opus", "attempts": 1 }
+  },
+  "waves": { "completed": [1, 2], "current": 3 },
+  "testsGreen": 89
+}
